@@ -5,7 +5,7 @@ import com.example.popularmovies.model.datasource.movie.Movie
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 
-class ISSResponseObserver(internal var callback: Callback) : Observer<Movie> {
+class MovieResponseObserver(internal var callback: Callback) : Observer<Movie> {
 
     internal var movie = Movie()
 

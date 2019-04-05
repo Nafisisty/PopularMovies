@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 
 class DataSourceRepo {
 
-    internal var retrofitHelper = RetrofitHelper()
+    private var retrofitHelper = RetrofitHelper()
 
     fun getPopularMovie(callback: Callback) {
 
@@ -15,7 +15,7 @@ class DataSourceRepo {
             .subscribeOn(Schedulers.io())
             .retryWhen { o -> o.take(5).delay(2, TimeUnit.SECONDS) }
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(ISSResponseObserver(callback))
+            .subscribe(MovieResponseObserver(callback))
 
     }
 
