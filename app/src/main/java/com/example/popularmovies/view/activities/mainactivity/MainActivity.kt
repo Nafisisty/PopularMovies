@@ -27,33 +27,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java!!)
+        val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
         activityMainBinding.mainViewModel
         activityMainBinding.executePendingBindings()
 
-        activityMainBinding.recyclerView.setLayoutManager(LinearLayoutManager(this))
+        activityMainBinding.recyclerView.layoutManager = LinearLayoutManager(this)
         activityMainBinding.recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
 
-        mainViewModel.getMovieLiveData().observe(this, object : Observer<List<Result>> {
-            override fun onChanged(movies: List<Result>?) {
-
+        mainViewModel.getMovieLiveData().observe(this,
+            Observer<List<Result>> { movies ->
                 if (movies != null && movies.isNotEmpty()) {
 
                     Log.d("TAG", "observer Changed: ")
 
                     val recyclerViewAdapter = RecyclerViewAdapter(ArrayList(movies))
-                    activityMainBinding.recyclerView.setAdapter(recyclerViewAdapter)
+                    activityMainBinding.recyclerView.adapter = recyclerViewAdapter
 
                 } else {
 
                     Toast.makeText(baseContext, "No data.", Toast.LENGTH_SHORT).show()
 
                 }
-
-            }
-        })
+            })
 
     }
 

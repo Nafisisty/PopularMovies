@@ -35,7 +35,6 @@ class RetrofitHelper {
             val remoteService = retrofit.create(RemoteService::class.java)
             return remoteService.getMovieObservable(aKey, aSortType)
 
-
         }
 
 

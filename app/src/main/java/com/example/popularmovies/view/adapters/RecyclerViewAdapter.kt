@@ -13,7 +13,7 @@ import com.example.popularmovies.model.datasource.movie.Result
 import kotlinx.android.synthetic.main.item.view.*
 import java.util.ArrayList
 
-class RecyclerViewAdapter(internal var resultArrayList: ArrayList<Result>) :
+class RecyclerViewAdapter(private var resultArrayList: ArrayList<Result>) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     lateinit var viewGroupTemp: ViewGroup
 
@@ -32,7 +32,7 @@ class RecyclerViewAdapter(internal var resultArrayList: ArrayList<Result>) :
         val movie = resultArrayList[position]
         Log.d("TAG", "Movie" + movie.originalTitle)
         if (movie != null) {
-            viewHolder.itemBinding.setMovie(movie)
+            viewHolder.itemBinding.movie = movie
 
             Glide.with(viewGroupTemp.context)
                 .load(IMAGE_BASE_URL + movie.posterPath)
