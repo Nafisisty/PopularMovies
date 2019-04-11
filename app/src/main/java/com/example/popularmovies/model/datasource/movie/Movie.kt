@@ -32,7 +32,7 @@ class Movie : Parcelable {
         )
     }
 
-    constructor() {}
+    constructor()
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeValue(page)

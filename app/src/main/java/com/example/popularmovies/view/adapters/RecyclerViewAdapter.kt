@@ -13,6 +13,8 @@ import com.example.popularmovies.model.datasource.movie.Result
 import kotlinx.android.synthetic.main.item.view.*
 import java.util.ArrayList
 
+
+
 class RecyclerViewAdapter(private var resultArrayList: ArrayList<Result>) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     lateinit var viewGroupTemp: ViewGroup
