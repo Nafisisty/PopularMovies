@@ -18,7 +18,7 @@ class MovieResponseObserver(private var callback: Callback) : Observer<Movie> {
     override fun onNext(movie: Movie) {
 
         this.movie = movie
-        Log.d("TAG", "onNext: " + movie.totalResults)
+        Log.d("TAG", "onNext: Getting Data")
 
     }
 
