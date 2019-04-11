@@ -11,5 +11,7 @@ class Constants {
 
         const val IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w342/"
 
+        const val API_KEY = "1173e8e0543a9fc4b37cac32d448b130"
+        const val SORT_TYPE = "popularity.desc"
     }
 }
