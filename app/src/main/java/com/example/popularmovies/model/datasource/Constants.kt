@@ -3,7 +3,7 @@ package com.example.popularmovies.model.datasource
 class Constants {
     companion object {
 
-        val FULL_EXAMPLE_URL = "https://api.themoviedb.org/3/discover/movie?api_key=1173e8e0543a9fc4b37cac32d448b130&&sort_by=popularity.desc"
+//        val FULL_EXAMPLE_URL = "https://api.themoviedb.org/3/discover/movie?api_key=1173e8e0543a9fc4b37cac32d448b130&&sort_by=popularity.desc"
         const val ACTUAL_BASE_URL = "https://api.themoviedb.org/"
         const val PATH = "3/discover/movie/"
         const val QUERY_RESULTS_1 = "api_key"

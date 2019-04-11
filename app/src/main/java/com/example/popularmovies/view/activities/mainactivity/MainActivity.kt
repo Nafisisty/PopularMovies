@@ -40,14 +40,12 @@ class MainActivity : AppCompatActivity() {
             Observer<List<Result>> { movies ->
                 if (movies != null && movies.isNotEmpty()) {
 
-                    Log.d("TAG", "observer Changed: ")
-
                     val recyclerViewAdapter = RecyclerViewAdapter(ArrayList(movies))
                     activityMainBinding.recyclerView.adapter = recyclerViewAdapter
 
                 } else {
 
-                    Toast.makeText(baseContext, "No data.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, "Failed to get data. Please check your connection.", Toast.LENGTH_SHORT).show()
 
                 }
             })
