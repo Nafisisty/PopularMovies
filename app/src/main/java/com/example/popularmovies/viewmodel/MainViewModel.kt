@@ -29,7 +29,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val dataSourceRepo = DataSourceRepo()
         dataSourceRepo.getPopularMovie(object : Callback {
             override fun onSuccess(movie: Movie) {
-                Log.d("TAG", "onSuccess: " + movie.totalResults)
+                Log.d("TAG", "Total Movies : " + movie.totalResults)
                 movieLiveData.postValue(movie.results)
             }
         })
