@@ -32,5 +32,6 @@ class MovieResponseObserver(private var callback: Callback) : Observer<Movie> {
 
         this.callback.onSuccess(movie)
 
+        Log.d("TAG", "Completed!!!")
     }
 }
